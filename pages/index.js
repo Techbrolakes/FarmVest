@@ -2,9 +2,13 @@ import { Button, IconButton } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 import { FaBars } from "react-icons/fa";
+import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
+  const TogglePage = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   return (
     <div>
       <Head>
@@ -14,7 +18,7 @@ export default function Home() {
       </Head>
 
       <div className="bg-white dark:bg-black min-h-screen text-black">
-        <section className="bg-[url('/bgicons.png')] min-h-screen bg-contain bg-top lg:bg-center lg:bg-cover bg-no-repeat text-primaryText">
+        <section className="bg-[url('/bgicons.png')] min-h-screen bg-contain bg-top lg:bg-center lg:bg-cover bg-no-repeat text-primaryText dark:text-white">
           <nav className="font-link text-lg flex justify-between items-center py-4 px-8 md:px-20">
             <div>
               <h1 className="font-medium text-4xl">FarmVest</h1>
@@ -25,27 +29,40 @@ export default function Home() {
               <li>Features</li>
               <li>How it works</li>
             </ul>
-            <div className="text-lg hidden lg:block">
+            <div>
               <a
                 href="#"
-                className="border-2 border-black py-2 px-6 cursor-pointer text-primary rounded-lg mr-4"
+                className="border-2 text-lg hidden lg:inline-block border-black dark:border-white py-2 px-6 cursor-pointer text-primary rounded-lg mr-4"
               >
                 Sign In
               </a>
               <a
                 href="#"
-                className="bg-mainGreen py-3 px-6 cursor-pointer text-white rounded-lg shadow-md"
+                className="bg-mainGreen text-lg hidden lg:inline-block py-3 px-6 cursor-pointer text-white rounded-lg shadow-md"
               >
                 Get Started
               </a>
+              <Button
+                color="green"
+                variant="outline"
+                ml="10px"
+                onClick={TogglePage}
+              >
+                {theme === "light" ? (
+                  <RiMoonClearFill />
+                ) : (
+                  <RiSunFill color="#fff" />
+                )}
+              </Button>
             </div>
+
             <div className="block lg:hidden">
               <IconButton icon={<FaBars />} />
             </div>
           </nav>
 
           <div className="flex flex-col items-center justify-center pt-24 text-center font-body px-4 lg:px-0">
-            <h1 className=" text-4xl md:text-6xl lg:text-7xl font-bold w-full lg:w-4/6 mb-4">
+            <h1 className=" text-4xl md:text-6xl lg:text-7xl font-bold w-full lg:w-4/6 mb-4 dark:text-white">
               The easiest and fastest way to
               <span className="text-mainGreen"> Invest </span> in Agriculture
             </h1>
@@ -71,17 +88,7 @@ export default function Home() {
         </section>
       </div>
 
-      <article>
-        <Button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-          {theme === "light" ? (
-            <div>
-              <FaBars />
-            </div>
-          ) : (
-            "Light"
-          )}
-        </Button>
-      </article>
+      <article></article>
     </div>
   );
 }
