@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import Head from "next/head";
 import { FaBars } from "react-icons/fa";
 import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
+import ImageSwiper from "./components/ImageSwiper";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -88,7 +89,9 @@ export default function Home() {
         </section>
       </div>
 
-      <article></article>
+      <article>
+        <ImageSwiper />
+      </article>
     </div>
   );
 }
