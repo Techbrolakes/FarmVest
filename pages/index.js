@@ -5,6 +5,7 @@ import Head from "next/head";
 import { FaBars } from "react-icons/fa";
 import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
 import ImageSwiper from "./components/ImageSwiper";
+import Details from "./components/Details";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -23,7 +24,7 @@ export default function Home() {
       </Head>
 
       <div className="bg-white dark:bg-primaryText min-h-screen text-black">
-        <section className="bg-[url('/bgicons.png')] dark:bg-[url('/darkbg.png')] min-h-screen bg-contain bg-top lg:bg-center lg:bg-cover bg-no-repeat text-primaryText dark:text-white">
+        <section className="bg-[url('/bgicons.png')] dark:bg-[url('/darkbg.png')]  bg-contain bg-top lg:bg-center lg:bg-cover bg-no-repeat text-primaryText dark:text-white">
           <nav className="font-link text-lg flex justify-between items-center py-4 px-8 md:px-20">
             <div>
               <h1 className="font-medium text-4xl">FarmVest</h1>
@@ -53,11 +54,7 @@ export default function Home() {
                 ml="10px"
                 onClick={TogglePage}
               >
-                {theme === "light" ? (
-                  <RiMoonClearFill onClick={TogglePage} />
-                ) : (
-                  <RiSunFill onClick={TogglePage} />
-                )}
+                {theme === "light" ? <RiMoonClearFill /> : <RiSunFill />}
               </Button>
             </div>
 
@@ -94,6 +91,7 @@ export default function Home() {
 
         <article>
           <ImageSwiper />
+          <Details />
         </article>
       </div>
     </div>

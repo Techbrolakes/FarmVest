@@ -8,8 +8,7 @@ const ImageSwiper = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="mt-24 px-12">
-      {theme}
+    <div className="mt-12  lg:mt-24 px-16">
       <Swiper
         pagination={{
           clickable: true,
@@ -20,7 +19,7 @@ const ImageSwiper = () => {
         }}
         breakpoints={{
           "@0.00": {
-            slidesPerView: 1,
+            slidesPerView: 3,
             spaceBetween: 10,
           },
           "@0.75": {
@@ -42,40 +41,54 @@ const ImageSwiper = () => {
         <div>
           <SwiperSlide>
             <img
-              src={
-                theme == "light" ?? "system"
-                  ? "/MarketWatch.png"
-                  : "/marketwhite.png"
-              }
+              src="/MarketWatch.png"
               alt="companylogo"
+              className="dark:hidden"
+            />
+            <img
+              src="/Marketwhite.png"
+              alt="logo"
+              className="hidden dark:inline-block"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/forbes.png" alt="companylogo" className="dark:hidden" />
+            <img
+              src="/forbes2.png"
+              alt="companylogo"
+              className="hidden dark:inline-block"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={theme == "light" ?? "system" ? "forbes.png" : "/forbes2.png"}
+              src="/business.png"
               alt="companylogo"
+              className="dark:hidden"
+            />
+            <img
+              src="/business2.png"
+              alt="companylogo"
+              className="hidden dark:inline-block"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={
-                theme == "light" ?? "system" ? "business.png" : "/business2.png"
-              }
+              src="/fidelity.png"
               alt="companylogo"
+              className="dark:hidden"
+            />
+            <img
+              src="/fidelity2.png"
+              alt="companylogo"
+              className="hidden dark:inline-block"
             />
           </SwiperSlide>
           <SwiperSlide>
+            <img src="/wired2.png" alt="companylogo" className="dark:hidden" />
             <img
-              src={
-                theme == "light" ?? "system" ? "fidelity.png" : "/fidelity2.png"
-              }
+              src="/wired2.png"
               alt="companylogo"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={theme == "light" ?? "system" ? "wired.png" : "/wired2.png"}
-              alt="companylogo"
+              className="hidden dark:inline-block"
             />
           </SwiperSlide>
         </div>
