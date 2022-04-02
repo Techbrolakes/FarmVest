@@ -1,4 +1,5 @@
 import { Button, IconButton } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 import { FaBars } from "react-icons/fa";
@@ -7,9 +8,12 @@ import ImageSwiper from "./components/ImageSwiper";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
+  const { mounted, setMounted } = useState(false);
+
   const TogglePage = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+
   return (
     <div>
       <Head>

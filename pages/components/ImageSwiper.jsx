@@ -9,6 +9,7 @@ const ImageSwiper = () => {
 
   return (
     <div className="mt-24 px-12">
+      {theme}
       <Swiper
         pagination={{
           clickable: true,
@@ -41,31 +42,39 @@ const ImageSwiper = () => {
         <div>
           <SwiperSlide>
             <img
-              src={theme == "light" ? "/MarketWatch.png" : "/marketwhite.png"}
+              src={
+                theme == "light" ?? "system"
+                  ? "/MarketWatch.png"
+                  : "/marketwhite.png"
+              }
               alt="companylogo"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={theme == "light" ? "forbes.png" : "/forbes2.png"}
+              src={theme == "light" ?? "system" ? "forbes.png" : "/forbes2.png"}
               alt="companylogo"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={theme == "light" ? "business.png" : "/business2.png"}
+              src={
+                theme == "light" ?? "system" ? "business.png" : "/business2.png"
+              }
               alt="companylogo"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={theme == "light" ? "fidelity.png" : "/fidelity2.png"}
+              src={
+                theme == "light" ?? "system" ? "fidelity.png" : "/fidelity2.png"
+              }
               alt="companylogo"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={theme === "light" ? "wired.png" : "/wired2.png"}
+              src={theme == "light" ?? "system" ? "wired.png" : "/wired2.png"}
               alt="companylogo"
             />
           </SwiperSlide>
