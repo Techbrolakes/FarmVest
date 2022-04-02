@@ -18,8 +18,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-white dark:bg-black min-h-screen text-black">
-        <section className="bg-[url('/bgicons.png')] min-h-screen bg-contain bg-top lg:bg-center lg:bg-cover bg-no-repeat text-primaryText dark:text-white">
+      <div className="bg-white dark:bg-primaryText min-h-screen text-black">
+        <section className="bg-[url('/bgicons.png')] dark:bg-[url('/darkbg.png')] min-h-screen bg-contain bg-top lg:bg-center lg:bg-cover bg-no-repeat text-primaryText dark:text-white">
           <nav className="font-link text-lg flex justify-between items-center py-4 px-8 md:px-20">
             <div>
               <h1 className="font-medium text-4xl">FarmVest</h1>
@@ -44,15 +44,15 @@ export default function Home() {
                 Get Started
               </a>
               <Button
-                color="green"
-                variant="outline"
+                color="white"
+                colorScheme="green"
                 ml="10px"
                 onClick={TogglePage}
               >
                 {theme === "light" ? (
-                  <RiMoonClearFill />
+                  <RiMoonClearFill onClick={TogglePage} />
                 ) : (
-                  <RiSunFill color="#fff" />
+                  <RiSunFill onClick={TogglePage} />
                 )}
               </Button>
             </div>
@@ -87,11 +87,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div>
 
-      <article>
-        <ImageSwiper />
-      </article>
+        <article>
+          <ImageSwiper />
+        </article>
+      </div>
     </div>
   );
 }
