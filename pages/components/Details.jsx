@@ -59,12 +59,12 @@ const Details = () => {
           <img
             src="/man.png"
             alt="manpicture"
-            className="flex-1 h-full dark:hidden"
+            className="flex-1 w-5/6 lg:w-full mx-auto h-full dark:hidden"
           />
           <img
             src="/darkman.png"
             alt="manpicture"
-            className="flex-1 h-full hidden dark:inline-block"
+            className="flex-1 w-5/6 lg:w-full mx-auto h-full hidden dark:block"
           />
         </div>
       </section>
@@ -73,12 +73,12 @@ const Details = () => {
         <img
           src="/boy.png"
           alt="boy"
-          className=" w-full lg:w-1/2 dark:hidden"
+          className=" w-5/6 mx-auto lg:w-1/2 dark:hidden"
         />
         <img
           src="/darkboy.png"
           alt="boy"
-          className=" w-full lg:w-1/2 hidden dark:inline-block"
+          className=" w-5/6 mx-auto lg:w-1/2 hidden dark:inline-block"
         />
         <div className="font-body w-full lg:w-4/6 dark:text-white text-primaryText text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl lg:text-[70px] font-bold mb-8">
@@ -156,7 +156,11 @@ const Details = () => {
           </article>
         </div>
         <div className="mt-8 lg:mt-0">
-          <img src="/girl.png" alt="girlpicture" />
+          <img
+            src="/girl.png"
+            alt="girlpicture"
+            className="w-5/6 lg:w-full mx-auto"
+          />
         </div>
       </section>
     </>

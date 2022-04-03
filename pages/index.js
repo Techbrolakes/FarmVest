@@ -6,6 +6,8 @@ import { FaBars } from "react-icons/fa";
 import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
 import ImageSwiper from "./components/ImageSwiper";
 import Details from "./components/Details";
+import Customers from "./components/Customers";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
@@ -92,6 +94,8 @@ export default function Home() {
         <article>
           <ImageSwiper />
           <Details />
+          <Customers />
+          <Footer />
         </article>
       </div>
     </div>
