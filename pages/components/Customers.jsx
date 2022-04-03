@@ -8,13 +8,15 @@ import { FaGooglePlay } from "react-icons/fa";
 const Testimonials = ({ img, name }) => {
   return (
     <div className="flex shadow-lg w-4/5 mx-auto lg:w-full mt-8">
-      <img src={img} alt="testimonial" className="w-1/3 lg:w-full" />
-      <article className="bg-[#F2F9F2] dark:bg-[#313C42] dark:text-white rounded-md flex flex-col justify-between text-sm lg:text-lg p-4">
-        <p>
+      <img src={img} alt="testimonial" className="w-1/2 lg:w-full" />
+      <article className="bg-[#F2F9F2] dark:bg-[#313C42] dark:text-white rounded-md flex flex-col justify-between text-sm lg:text-lg py-4 pl-4">
+        <p className="text-xs lg:text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu, mollis
           aenean sit dictum tincidunt. Ut arcu, suscipit ac
         </p>
-        <span className="text-lg font-semibold self-start">{name}</span>
+        <span className="text-xs lg:text-lg font-semibold self-start">
+          {name}
+        </span>
       </article>
     </div>
   );
