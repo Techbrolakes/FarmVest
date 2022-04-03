@@ -83,14 +83,18 @@ const Customers = () => {
               <button className="bg-black flex items-center hover:bg-primaryText text-white py-2 px-2 lg:px-4 rounded-lg shadow-lg">
                 <ImAppleinc size="32px" />
                 <div className="text-left">
-                  <h1 className="text-xs"> Available on the</h1>
-                  <img src="/Vector.png" alt="icon" />
+                  <h1 className="text-[10px]"> Available on the</h1>
+                  <img
+                    src="/Vector.png"
+                    alt="icon"
+                    className="w-5/6 lg:w-full"
+                  />
                 </div>
               </button>
               <button className="bg-black ml-8 hover:bg-primaryText flex items-center text-white py-2 px-2 lg:px-2 rounded-lg shadow-lg">
                 <FaGooglePlay size="32px" />
                 <div className="text-left">
-                  <h1 className="text-xs"> Available on the</h1>
+                  <h1 className="text-[10px]"> Available on the</h1>
                   <img src="/gp.png" alt="icon" />
                 </div>
               </button>

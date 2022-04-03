@@ -65,7 +65,7 @@ const Footer = () => {
       </div>
       <article className="block lg:flex justify-between bg-[#F2F8F2] dark:bg-[#354046]  text-primaryText dark:text-white pt-4 text-xs md:text-base">
         <p className="text-center lg:text-left">© 2021 All Rights Reserved</p>
-        <ul className="flex gap-2 mt-4 lg:mt-0 lg:gap-8 text-center lg:text-left">
+        <ul className="flex gap-2 mt-4 lg:mt-0 lg:gap-8 px-4 text-center lg:text-left">
           <li>Privacy Policy</li>
           <li>Terms of Use</li>
           <li>Sales and Refunds</li>
