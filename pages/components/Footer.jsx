@@ -18,7 +18,7 @@ const Footer = () => {
               Subscribe to stay tuned for new web design and latest updates.
               Let&rsquo;s do it!
             </p>
-            <div className="md:bg-[#E9EBEB] py-3 md:py-1 px-8 md:px-2 mt-2 rounded-md flex justify-between">
+            <div className="md:bg-[#E9EBEB] py-3 md:py-1 px-8 md:px-2 mt-2 rounded-md block lg:flex justify-between">
               <input
                 type="text"
                 placeholder="Enter your email"
@@ -26,7 +26,7 @@ const Footer = () => {
               />
               <a
                 href="#"
-                className="bg-mainGreen hover:bg-green-700 block md:inline py-2 lg:py-3 px-8 cursor-pointer text-white rounded-lg shadow-md"
+                className="bg-mainGreen hover:bg-green-700 block md:inline py-2 lg:py-3 px-8 cursor-pointer my-2 lg:my-0 text-white rounded-lg shadow-md"
               >
                 Subscribe
               </a>
@@ -62,18 +62,17 @@ const Footer = () => {
             <span>+2349123456789</span>
           </div>
         </section>
-
-        <article className="block lg:flex justify-between text-primaryText dark:text-white pt-4 text-base">
-          <p>© 2021 All Rights Reserved</p>
-          <ul className="flex gap-8">
-            <li>Privacy Policy</li>
-            <li>Terms of Use</li>
-            <li>Sales and Refunds</li>
-            <li>Legal</li>
-            <li>Site Map</li>
-          </ul>
-        </article>
       </div>
+      <article className="block lg:flex justify-between bg-[#F2F8F2] dark:bg-[#354046]  text-primaryText dark:text-white pt-4 text-xs md:text-base">
+        <p className="text-center lg:text-left">© 2021 All Rights Reserved</p>
+        <ul className="flex gap-2 mt-4 lg:mt-0 lg:gap-8 text-center lg:text-left">
+          <li>Privacy Policy</li>
+          <li>Terms of Use</li>
+          <li>Sales and Refunds</li>
+          <li>Legal</li>
+          <li>Site Map</li>
+        </ul>
+      </article>
     </>
   );
 };
