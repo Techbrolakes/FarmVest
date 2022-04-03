@@ -16,7 +16,7 @@ const Footer = () => {
           <div>
             <p>
               Subscribe to stay tuned for new web design and latest updates.
-              Let's do it!
+              Let&rsquo;s do it!
             </p>
             <div className="md:bg-[#E9EBEB] md:w-auto py-2 md:py-4 px-8 md:px-2 rounded-md">
               <input
