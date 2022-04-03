@@ -154,6 +154,9 @@ export default function Home() {
             </div>
           ) : (
             <article>
+              <h1 className="text-center text-primaryText dark:text-white text-xs md:text-2xl uppercase font-bold font-body my-8">
+                we feature on popular partner like
+              </h1>
               <ImageSwiper />
               <Details />
               <Customers />
