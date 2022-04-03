@@ -1,8 +1,8 @@
 import { Button, IconButton } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
 import ImageSwiper from "./components/ImageSwiper";
 import Details from "./components/Details";
@@ -11,12 +11,15 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
+  const [nav, setnav] = useState(false);
   const { mounted, setMounted } = useState(false);
 
   const TogglePage = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
-
+  const handleNavClick = () => {
+    return setnav(!nav);
+  };
   return (
     <div>
       <Head>
@@ -53,6 +56,7 @@ export default function Home() {
               <Button
                 color="white"
                 colorScheme="green"
+                boxShadow={"dark-lg"}
                 ml="10px"
                 onClick={TogglePage}
               >
@@ -61,11 +65,39 @@ export default function Home() {
             </div>
 
             <div className="block lg:hidden">
-              <IconButton icon={<FaBars />} />
+              {nav ? (
+                <IconButton
+                  boxShadow={"2xl"}
+                  icon={
+                    <FaTimes
+                      color="#000"
+                      onClick={() => {
+                        handleNavClick();
+                      }}
+                    />
+                  }
+                />
+              ) : (
+                <IconButton
+                  icon={
+                    <FaBars
+                      color="#000"
+                      onClick={() => {
+                        handleNavClick();
+                      }}
+                    />
+                  }
+                />
+              )}
             </div>
           </nav>
-
-          <div className="flex flex-col items-center justify-center pt-24 text-center font-body px-4 lg:px-0">
+          <div
+            className={
+              nav
+                ? "hidden"
+                : "flex flex-col items-center justify-center pt-24 text-center font-body px-4 lg:px-0"
+            }
+          >
             <h1 className=" text-4xl md:text-6xl lg:text-7xl font-bold w-full lg:w-4/6 mb-4 dark:text-white">
               The easiest and fastest way to
               <span className="text-mainGreen"> Invest </span> in Agriculture
@@ -90,13 +122,29 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <article>
-          <ImageSwiper />
-          <Details />
-          <Customers />
-          <Footer />
-        </article>
+        {nav ? (
+          <div className="min-h-screen dark:text-white flex items-center flex-col justify-center gap-4">
+            <ul className="text-4xl text-center flex flex-col gap-8">
+              <li>Home</li>
+              <li>About</li>
+              <li>Features</li>
+              <li>How it works</li>
+            </ul>
+            <button className="py-2 block px-6 bg-mainGreen  cursor-pointer text-white rounded-lg shadow-md">
+              Sign In
+            </button>
+            <button className="py-2 block px-6 bg-mainGreen  cursor-pointer text-white rounded-lg shadow-md">
+              Get Started{" "}
+            </button>
+          </div>
+        ) : (
+          <article>
+            <ImageSwiper />
+            <Details />
+            <Customers />
+            <Footer />
+          </article>
+        )}
       </div>
     </div>
   );
